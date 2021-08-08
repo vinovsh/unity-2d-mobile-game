@@ -19,7 +19,7 @@ public class bulletControll : MonoBehaviour
      if(coll.gameObject.tag=="enemy"){
 
        coll.gameObject.GetComponent<enemyHealthController>().healthReduce(1);
-     } 
+     }
 
         
     }
