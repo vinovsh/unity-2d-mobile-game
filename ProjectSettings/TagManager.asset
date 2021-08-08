@@ -10,6 +10,10 @@ TagManager:
   - coin_sound
   - toe
   - top
+  - FxTemporaire
+  - Bullet
+  - BulletCollider
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -46,4 +50,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 2183986889
+    locked: 0
+  - name: tilemap
+    uniqueID: 3078874377
+    locked: 0
+  - name: path
+    uniqueID: 2057468625
+    locked: 0
+  - name: components
+    uniqueID: 2016469739
+    locked: 0
+  - name: enemy
+    uniqueID: 2213506823
+    locked: 0
+  - name: player
+    uniqueID: 2717962475
+    locked: 0
+  - name: effect
+    uniqueID: 1708026239
     locked: 0
