@@ -14,6 +14,7 @@ TagManager:
   - Bullet
   - BulletCollider
   - Explosion
+  - platform
   layers:
   - Default
   - TransparentFX

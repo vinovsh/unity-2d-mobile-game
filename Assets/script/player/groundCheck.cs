@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class groundCheck : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject player;
+    Rigidbody2D rb;
     void Start(){
 
          player = GameObject.FindWithTag("Player");
+
+         rb=player.GetComponent<Rigidbody2D>();
 
         
         
@@ -18,9 +23,12 @@ public class groundCheck : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
          
-      if(col.gameObject.tag=="ground"){
+      if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform"){
 
         player.GetComponent<playerController>().isGround=true;
+        // player.transform.parent = col.gameObject.transform;
+       // player.transform.SetParent(col.gameObject.transform);
+       //rb.interpolation = RigidbodyInterpolation2D.None;
 
       }
 
@@ -45,9 +53,11 @@ public class groundCheck : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
-      if(col.gameObject.tag=="ground"){
+      if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform"){
 
         player.GetComponent<playerController>().isGround=false;
+       // player.transform.parent = null;
+       // player.transform.SetParent(null);
 
       }
     }
