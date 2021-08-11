@@ -20,12 +20,17 @@ public class playerController : MonoBehaviour
     public bool canJump=false;
 
     public float friction;
+
+    public AudioSource runSound;
+    
     
     void Awake()
     {
 
         rb=GetComponent<Rigidbody2D>();
         anim = anim.GetComponent<Animator>();
+
+
         
     }
 
@@ -48,10 +53,19 @@ public class playerController : MonoBehaviour
         // transform.position+=new Vector3(1,0,0)*Time.deltaTime*speed;
           
             rb.AddForce(Vector2.right*speed);
-           // anim.Play("playerLayer.walk", 0, 0.25f);
-           anim.SetInteger("jump", 0);
-           anim.SetInteger("idle", 0);
+           
+            anim.SetInteger("jump", 0);
+            anim.SetInteger("idle", 0);
             anim.SetInteger("walk", 1);
+
+            if (!runSound.isPlaying && isGround==true)
+            {
+
+             runSound.Play();
+
+            }
+
+           
           
             
         }else if(Input.GetKey(KeyCode.LeftArrow) || canLeftMove){
@@ -64,7 +78,14 @@ public class playerController : MonoBehaviour
           anim.SetInteger("jump", 0);
           anim.SetInteger("idle", 0);
           
-           anim.SetInteger("walk", 1);
+          anim.SetInteger("walk", 1);
+
+          if (!runSound.isPlaying  && isGround==true)
+          {
+
+             runSound.Play();
+
+          }
             
 
         }else{

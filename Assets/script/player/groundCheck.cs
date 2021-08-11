@@ -9,6 +9,9 @@ public class groundCheck : MonoBehaviour
     // Start is called before the first frame update
     GameObject player;
     Rigidbody2D rb;
+    public AudioSource jumpDownSound;
+
+    private float groundExitTime=0f;
     void Start(){
 
          player = GameObject.FindWithTag("Player");
@@ -26,6 +29,14 @@ public class groundCheck : MonoBehaviour
       if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform"){
 
         player.GetComponent<playerController>().isGround=true;
+        print(groundExitTime);
+         if (!jumpDownSound.isPlaying && Time.time > groundExitTime+0.1f)
+          {
+            groundExitTime=0f;
+            jumpDownSound.Play();
+
+          }
+        
         // player.transform.parent = col.gameObject.transform;
        // player.transform.SetParent(col.gameObject.transform);
        //rb.interpolation = RigidbodyInterpolation2D.None;
@@ -58,6 +69,7 @@ public class groundCheck : MonoBehaviour
         player.GetComponent<playerController>().isGround=false;
        // player.transform.parent = null;
        // player.transform.SetParent(null);
+       groundExitTime=Time.time;
 
       }
     }
