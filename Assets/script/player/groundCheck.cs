@@ -29,7 +29,7 @@ public class groundCheck : MonoBehaviour
       if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform"){
 
         player.GetComponent<playerController>().isGround=true;
-        print(groundExitTime);
+      
          if (!jumpDownSound.isPlaying && Time.time > groundExitTime+0.1f)
           {
             groundExitTime=0f;

@@ -30,7 +30,7 @@ public class boxController : MonoBehaviour
         if (!box_drag_sound.isPlaying)
         {
 
-             box_drag_sound.Play();
+            // box_drag_sound.Play();
 
         }
 
@@ -40,7 +40,7 @@ public class boxController : MonoBehaviour
         }else{
 
             // print("its not moving");
-             box_drag_sound.Stop();
+            // box_drag_sound.Stop();
         }
         
     }
