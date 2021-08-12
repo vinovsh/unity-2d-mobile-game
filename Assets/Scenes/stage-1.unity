@@ -2497,8 +2497,8 @@ GameObject:
   - component: {fileID: 1380550757}
   - component: {fileID: 1380550758}
   - component: {fileID: 1380550759}
-  - component: {fileID: 1380550756}
   - component: {fileID: 1380550755}
+  - component: {fileID: 1380550756}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -2576,11 +2576,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 2
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &1380550757
 MonoBehaviour:
@@ -2594,8 +2594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931edefbb2f5af34782410a691f08c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
-  jumpspeed: 20
+  speed: 2
+  jumpspeed: 10
   rb: {fileID: 0}
   anim: {fileID: 1782997638}
   isGround: 1

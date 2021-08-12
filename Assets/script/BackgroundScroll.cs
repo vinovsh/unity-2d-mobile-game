@@ -40,7 +40,7 @@ public class BackgroundScroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         //background 2

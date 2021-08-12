@@ -42,17 +42,19 @@ public class playerController : MonoBehaviour
         float inputY=Input.GetAxis("Vertical");
 
        
- rb.velocity = rb.velocity * friction; // custom friction 
+ //rb.velocity = rb.velocity * friction; // custom friction 
 
       
 
        if (Input.GetKey(KeyCode.RightArrow) || canRightMove)
         {
-           transform.eulerAngles=new Vector3(0,0,0);
+           transform.eulerAngles=new Vector2(0,0);
        
-        // transform.position+=new Vector3(1,0,0)*Time.deltaTime*speed;
+       transform.position+=new Vector3(inputX,0,transform.position.z)*Time.fixedDeltaTime*speed;
           
-            rb.AddForce(Vector2.right*speed);
+           // rb.AddForce(Vector2.right*speed);
+
+           //rb.MovePosition(new Vector2(transform.position.x+1 * speed * Time.deltaTime,transform.position.y));
            
             anim.SetInteger("jump", 0);
             anim.SetInteger("idle", 0);
@@ -72,8 +74,9 @@ public class playerController : MonoBehaviour
           
           transform.eulerAngles=new Vector3(0,180,0);
          
-          //transform.position+=new Vector3(-1,0,0)*Time.deltaTime*speed;
-          rb.AddForce(Vector2.left*speed);
+          transform.position+=new Vector3(-1,0,0)*Time.fixedDeltaTime*speed;
+          //rb.AddForce(Vector2.left*speed);
+         // rb.MovePosition(new Vector2(transform.position.x-1 * speed * Time.deltaTime,transform.position.y));
          
           anim.SetInteger("jump", 0);
           anim.SetInteger("idle", 0);
