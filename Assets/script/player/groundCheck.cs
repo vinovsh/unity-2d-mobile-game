@@ -74,5 +74,15 @@ public class groundCheck : MonoBehaviour
       }
     }
 
+    void OnCollisionStay2D(Collision2D trigger)
+     {
+         if (trigger.gameObject.tag == "ground" )
+         {
+
+            player.GetComponent<playerController>().isGround=true;
+       
+         }
+     }
+
    
 }
