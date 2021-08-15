@@ -24,6 +24,18 @@ public class healthController : MonoBehaviour
     // Update is called once per frame
 
     public GameObject sprite_player_object;
+
+    public SpriteRenderer  player_sprite;
+
+    float blink_time;
+
+    void Start()
+    {
+
+
+        //player_sprite=sprite_player_object.GetComponent<SpriteRenderer>();
+        
+    }
     void Update()
     {
 
@@ -64,7 +76,35 @@ public class healthController : MonoBehaviour
         coinTextCounter.text=totalCoin.ToString();
 
 
+       /* player blink effect */
+       if(preventAttackTime >Time.time){
 
+           if(Time.time > blink_time){
+
+               
+
+               if(player_sprite.color==new Color(0.943f,0.084f,0.084f,1)){
+                   player_sprite.color = new Color(1,1,1,0) ; 
+                  
+               }else{
+                 
+                 player_sprite.color = new Color(0.943f,0.084f,0.084f,1) ; 
+
+               }
+              
+              blink_time=Time.time+0.1f;
+
+
+           }
+             
+            
+             
+       }else{
+
+            player_sprite.color = new Color(1,1,1,1) ;
+       }    
+       
+       
 
         
     }

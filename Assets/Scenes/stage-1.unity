@@ -2963,7 +2963,8 @@ MonoBehaviour:
   totalCoin: 0
   coinTextCounter: {fileID: 2044364152}
   preventAttackRate: 1
-  sprite_player_object: {fileID: 1805153570}
+  sprite_player_object: {fileID: 1782997637}
+  player_sprite: {fileID: 1782997639}
 --- !u!114 &1401530961
 MonoBehaviour:
   m_ObjectHideFlags: 0
