@@ -26,7 +26,7 @@ public float fireRate = 0.3f;
             if (Time.time > fireRate + lastShot)
             {
 
-               fireBullet();
+             //  fireBullet();
                lastShot = Time.time;
 
             }

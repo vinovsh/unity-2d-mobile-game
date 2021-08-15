@@ -50,7 +50,7 @@ public class playerController : MonoBehaviour
         {
            transform.eulerAngles=new Vector2(0,0);
        
-       transform.position+=new Vector3(inputX,0,transform.position.z)*Time.fixedDeltaTime*speed;
+           transform.position+=new Vector3(1,0,0)*Time.fixedDeltaTime*speed;
           
            // rb.AddForce(Vector2.right*speed);
 

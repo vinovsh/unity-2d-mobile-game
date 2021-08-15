@@ -1837,17 +1837,33 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
-      propertyPath: m_Mass
-      value: 1.4822799
+    - target: {fileID: 5231879879672114522, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
-      propertyPath: m_UseAutoMass
+      propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
       propertyPath: m_GravityScale
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825030068759497617, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8390522115234269454, guid: d39e6b5cc71025b4f810b144b0bd6bfc, type: 3}
       propertyPath: m_RootOrder
