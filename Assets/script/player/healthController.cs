@@ -28,14 +28,8 @@ public class healthController : MonoBehaviour
     public SpriteRenderer  player_sprite;
 
     float blink_time;
-
-    void Start()
-    {
-
-
-        //player_sprite=sprite_player_object.GetComponent<SpriteRenderer>();
-        
-    }
+    public AudioSource hurtSound;
+   
     void Update()
     {
 
@@ -119,6 +113,12 @@ public class healthController : MonoBehaviour
          currentHealth-=damage;
 
            preventAttackTime = Time.time+preventAttackRate;
+           if (!hurtSound.isPlaying)
+            {
+
+             hurtSound.Play();
+
+            }
 
         }
 
