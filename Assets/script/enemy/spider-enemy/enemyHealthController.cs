@@ -14,6 +14,8 @@ public class enemyHealthController : MonoBehaviour
 
     GameObject player;
 
+    AudioSource dieSound;
+
            
     public bool isEnemyAlive= true;
    
@@ -22,6 +24,7 @@ public class enemyHealthController : MonoBehaviour
 
        anim = anim.GetComponent<Animator>();
        player = GameObject.FindWithTag("Player");
+       dieSound=GetComponent<AudioSource>();
         
     }
 
@@ -29,6 +32,7 @@ public class enemyHealthController : MonoBehaviour
     {
 
        //Physics2D.IgnoreLayerCollision(3,6);   
+       
         
     }
 
@@ -42,6 +46,7 @@ public class enemyHealthController : MonoBehaviour
 
            
             isEnemyAlive=false;
+            dieSound.Play();
             anim.SetInteger("dead", 1);
 
             Destroy(gameObject,1f);
