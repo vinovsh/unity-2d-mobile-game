@@ -55,6 +55,9 @@ TagManager:
   - name: background
     uniqueID: 2183986889
     locked: 0
+  - name: tree_and_other_components
+    uniqueID: 1478488297
+    locked: 0
   - name: tilemap
     uniqueID: 3078874377
     locked: 0

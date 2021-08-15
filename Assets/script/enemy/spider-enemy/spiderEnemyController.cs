@@ -146,6 +146,15 @@ public class spiderEnemyController : MonoBehaviour
               }
 
             
+           }else{
+
+               if(move_direction==1){
+
+                     move_direction=-1;
+               }else{
+
+                     move_direction=1;
+               }
            }
 
             /* if(hit_left.collider!=null){
