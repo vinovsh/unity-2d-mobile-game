@@ -80,9 +80,12 @@ public class groundCheck : MonoBehaviour
          {
 
             player.GetComponent<playerController>().isGround=true;
+          
        
          }
      }
+
+     
 
    
 }

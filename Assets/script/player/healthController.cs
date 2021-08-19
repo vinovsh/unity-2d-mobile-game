@@ -29,9 +29,26 @@ public class healthController : MonoBehaviour
 
     float blink_time;
     public AudioSource hurtSound;
+
+     void Start()
+    {
+       playerData data=saveSystem.loadPlayer();
+
+       if(data !=null){
+         totalCoin=data.coin; 
+       }
+       
+     
+        
+    }
    
     void Update()
-    {
+    {     
+
+
+        //player data save
+
+        
 
         if(currentHealth > maxHealth){
 
@@ -131,11 +148,13 @@ public class healthController : MonoBehaviour
         
         totalCoin+=coin;
         coinTextCounter.text=totalCoin.ToString();
+        saveSystem.savePlayer(this);
     }
 
     public void CoinMinus(int coin){
         
         totalCoin-=coin;
         coinTextCounter.text=totalCoin.ToString();
+        saveSystem.savePlayer(this);
     }
 }
