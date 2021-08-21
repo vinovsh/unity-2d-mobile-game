@@ -88,13 +88,15 @@ public class groundCheck : MonoBehaviour
               if(player.GetComponent<playerController>().canGravity==true ){
 
                  rb.gravityScale=2f;
+                
                
               }else{
 
                  rb.gravityScale=0f;
+                 rb.velocity = Vector3.zero;
               }
 
-               
+             //rb.velocity = Vector3.zero;  
             }
 
            

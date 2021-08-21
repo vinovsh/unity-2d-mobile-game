@@ -122,7 +122,7 @@ public class playerController : MonoBehaviour
 
             if(isGround==true){
 
-              
+             
                rb.velocity=Vector2.up*jumpspeed;
                // rb.AddForce(Vector2.up*jumpspeed,ForceMode2D.Impulse);
                 anim.SetInteger("idle", 0);
