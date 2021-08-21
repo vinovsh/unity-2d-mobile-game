@@ -70,18 +70,34 @@ public class groundCheck : MonoBehaviour
        // player.transform.parent = null;
        // player.transform.SetParent(null);
        groundExitTime=Time.time;
+      rb.gravityScale=2f;
 
       }
     }
 
     void OnCollisionStay2D(Collision2D trigger)
      {
-         if (trigger.gameObject.tag == "ground" )
+         if (trigger.gameObject.tag == "ground" || trigger.gameObject.tag=="platform")
          {
 
             player.GetComponent<playerController>().isGround=true;
-          
-       
+            
+
+            if(trigger.gameObject.tag == "ground"){
+
+              if(player.GetComponent<playerController>().canGravity==true ){
+
+                 rb.gravityScale=2f;
+               
+              }else{
+
+                 rb.gravityScale=0f;
+              }
+
+               
+            }
+
+           
          }
      }
 

@@ -22,6 +22,8 @@ public class playerController : MonoBehaviour
     public float friction;
 
     public AudioSource runSound;
+
+    public bool canGravity=true;
     
     
     void Awake()
@@ -48,10 +50,16 @@ public class playerController : MonoBehaviour
       
 
        if (Input.GetKey(KeyCode.RightArrow) || canRightMove)
+       
         {
+
+          
+            canGravity=false;
            transform.eulerAngles=new Vector2(0,0);
        
-           transform.position+=new Vector3(1,0,0)*Time.fixedDeltaTime*speed;
+          transform.position+=new Vector3(1,0,0)*Time.fixedDeltaTime*speed;
+
+          // rb.velocity = new Vector2(inputX * 10, 0);
           
            // rb.AddForce(Vector2.right*speed);
 
@@ -69,10 +77,10 @@ public class playerController : MonoBehaviour
             }
 
            
-          
-            
+                 
         }else if(Input.GetKey(KeyCode.LeftArrow) || canLeftMove){
-          
+            
+          canGravity=false;
           transform.eulerAngles=new Vector3(0,180,0);
          
           transform.position+=new Vector3(-1,0,0)*Time.fixedDeltaTime*speed;
@@ -90,19 +98,23 @@ public class playerController : MonoBehaviour
              runSound.Play();
 
           }
+
+          
             
 
         }else{
 
+            canGravity=true;
+
              anim.SetInteger("walk", 0);
-              anim.SetInteger("jump", 0);
+             anim.SetInteger("jump", 0);
              
 
-            anim.SetInteger("idle", 1);
+             anim.SetInteger("idle", 1);
+             rb.gravityScale=2f;
           
           
-
-
+           
         }
 
          if (Input.GetKey(KeyCode.Space) || canJump)
@@ -133,6 +145,7 @@ public class playerController : MonoBehaviour
   public void leftMoveHold(){
 
       canLeftMove=true;
+      canGravity=false;
 
 
   }
@@ -140,12 +153,14 @@ public class playerController : MonoBehaviour
   public void leftMoveRelese(){
 
        canLeftMove=false;
+       canGravity=true;
 
   }
 
    public void rightMoveHold(){
 
       canRightMove=true;
+      canGravity=false;
 
 
   }
@@ -153,6 +168,7 @@ public class playerController : MonoBehaviour
   public void rightMoveRelese(){
 
        canRightMove=false;
+       canGravity=true;
 
   }
 

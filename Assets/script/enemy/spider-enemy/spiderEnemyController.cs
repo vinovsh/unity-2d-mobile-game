@@ -92,7 +92,7 @@ public class spiderEnemyController : MonoBehaviour
                   
                   canWalk=true;
                   attack=false;
-                  if(hit_right.distance < 0.1){
+                  if(hit_right.distance < 0.3){
 
                      if(move_direction==1){
 
