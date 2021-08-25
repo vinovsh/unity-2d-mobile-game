@@ -33,7 +33,13 @@ public class groundCheck : MonoBehaviour
          if (!jumpDownSound.isPlaying && Time.time > groundExitTime+0.1f)
           {
             groundExitTime=0f;
-            jumpDownSound.Play();
+
+            if(player.GetComponent<playerController>().isWater==false){
+                
+                jumpDownSound.Play();
+
+            }
+            
 
           }
         

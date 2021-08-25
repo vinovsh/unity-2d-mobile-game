@@ -24,6 +24,7 @@ public class playerController : MonoBehaviour
     public AudioSource runSound;
 
     public bool canGravity=true;
+    public bool isWater=false;
     
     
     void Awake()
@@ -69,7 +70,7 @@ public class playerController : MonoBehaviour
             anim.SetInteger("idle", 0);
             anim.SetInteger("walk", 1);
 
-            if (!runSound.isPlaying && isGround==true)
+            if (!runSound.isPlaying && isGround==true && isWater==false)
             {
 
              runSound.Play();
@@ -92,7 +93,7 @@ public class playerController : MonoBehaviour
           
           anim.SetInteger("walk", 1);
 
-          if (!runSound.isPlaying  && isGround==true)
+          if (!runSound.isPlaying  && isGround==true && isWater==false)
           {
 
              runSound.Play();
