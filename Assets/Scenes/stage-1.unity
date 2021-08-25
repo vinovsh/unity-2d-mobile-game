@@ -268,9 +268,9 @@ GameObject:
   m_Component:
   - component: {fileID: 131606035}
   - component: {fileID: 131606036}
+  - component: {fileID: 131606039}
   - component: {fileID: 131606038}
   - component: {fileID: 131606037}
-  - component: {fileID: 131606039}
   - component: {fileID: 131606040}
   m_Layer: 0
   m_Name: water
@@ -287,8 +287,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131606034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03468, y: -0.4184, z: 0.14}
-  m_LocalScale: {x: 0.9288443, y: 1.0915958, z: 1}
+  m_LocalPosition: {x: -0.06278, y: -0.7241, z: 0.14}
+  m_LocalScale: {x: 0.98924226, y: 1.4935653, z: 1}
   m_Children: []
   m_Father: {fileID: 1358544598}
   m_RootOrder: 1
@@ -376,7 +376,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0035835057, y: -0.022917867}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -387,7 +387,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 43.8, y: 1}
+  m_Size: {x: 1.0036836, y: 1.0458357}
   m_EdgeRadius: 0
 --- !u!114 &131606039
 MonoBehaviour:
@@ -407,6 +407,8 @@ MonoBehaviour:
   wave_Offset: {x: 0, y: 0}
   speed: 1
   wave_Top_offset: 1.08
+  wave_Top_offset_x: 0
+  whaterLevel: 0
 --- !u!82 &131606040
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8486,7 +8488,7 @@ GameObject:
   m_Layer: 0
   m_Name: water
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9306,8 +9308,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557757159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.032264996, y: 0.09355843, z: 0}
-  m_LocalScale: {x: 0.9266991, y: 0.109918065, z: 1}
+  m_LocalPosition: {x: 0, y: 0.09355843, z: 0}
+  m_LocalScale: {x: 0, y: 0.109918065, z: 1}
   m_Children: []
   m_Father: {fileID: 1358544598}
   m_RootOrder: 0

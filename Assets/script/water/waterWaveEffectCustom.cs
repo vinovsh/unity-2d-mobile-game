@@ -16,6 +16,11 @@ public class waterWaveEffectCustom : MonoBehaviour
     public float wave_Top_offset=1.08f;//dont change
     public float wave_Top_offset_x=0f; //dont change
 
+    public float whaterLevel;
+
+    float initial_water_bottom_pos;
+    float initial_water_scale;
+
     
     AudioSource waterSound;
     MeshRenderer mR;
@@ -31,7 +36,10 @@ public class waterWaveEffectCustom : MonoBehaviour
 
        
 
-      
+   
+
+        initial_water_bottom_pos=transform.position.y;
+        initial_water_scale=transform.localScale.y; 
 
        
        
@@ -45,12 +53,17 @@ public class waterWaveEffectCustom : MonoBehaviour
 
         waterWaveSprite.transform.position=new Vector3(wave_Top_offset_x*transform.localScale.x+transform.position.x,wave_Top_offset*transform.localScale.y+transform.position.y,0);
         waterWaveSprite.transform.localScale=new Vector3(transform.localScale.x,waterWaveSprite.transform.localScale.y,0);
- print(waterWaveSprite.transform.position);
 
+       // scroll wave
         wave_Offset.x=wave_Offset.x+speed*Time.deltaTime; 
         mR.sortingLayerName = SortingLayer;
         waveRender.material.SetTextureOffset("_MainTex", new Vector2(wave_Offset.x, wave_Offset.y)); 
         waveRender.material.SetTextureScale("_MainTex",new Vector2(wave_Tiling.x,wave_Tiling.y));
+
+        //whater level
+
+       transform.localScale=new Vector3(transform.localScale.x,initial_water_scale+whaterLevel,0);
+        transform.position=new Vector3(transform.position.x,initial_water_bottom_pos+whaterLevel,0);
        
         
     }
