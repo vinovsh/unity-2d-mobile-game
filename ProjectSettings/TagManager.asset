@@ -58,20 +58,23 @@ TagManager:
   - name: tree_and_other_components
     uniqueID: 1478488297
     locked: 0
-  - name: tilemap
-    uniqueID: 3078874377
+  - name: components
+    uniqueID: 2016469739
     locked: 0
   - name: path
     uniqueID: 2057468625
-    locked: 0
-  - name: components
-    uniqueID: 2016469739
     locked: 0
   - name: enemy
     uniqueID: 2213506823
     locked: 0
   - name: player
     uniqueID: 2717962475
+    locked: 0
+  - name: water
+    uniqueID: 449037215
+    locked: 0
+  - name: tilemap
+    uniqueID: 3078874377
     locked: 0
   - name: effect
     uniqueID: 1708026239
