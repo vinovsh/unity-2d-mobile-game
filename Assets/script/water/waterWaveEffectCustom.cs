@@ -16,7 +16,7 @@ public class waterWaveEffectCustom : MonoBehaviour
     public float wave_Top_offset=1.08f;//dont change
     public float wave_Top_offset_x=0f; //dont change
 
-    public float whaterLevel;
+    public float waterLevel;
 
     float initial_water_bottom_pos;
     float initial_water_scale;
@@ -62,8 +62,8 @@ public class waterWaveEffectCustom : MonoBehaviour
 
         //water level
 
-       transform.localScale=new Vector3(transform.localScale.x,initial_water_scale+whaterLevel,0);
-        transform.position=new Vector3(transform.position.x,initial_water_bottom_pos+whaterLevel,0);
+       transform.localScale=new Vector3(transform.localScale.x,initial_water_scale+waterLevel,0);
+        transform.position=new Vector3(transform.position.x,initial_water_bottom_pos+waterLevel,0);
        
         
     }
