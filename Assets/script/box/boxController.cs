@@ -51,7 +51,7 @@ public class boxController : MonoBehaviour
         if(tag=="Player"){
 
              gameObject.GetComponent<Rigidbody2D>().gravityScale=0.1f;
-              print("player");
+             
         }
         
     }
