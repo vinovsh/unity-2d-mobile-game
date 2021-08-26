@@ -60,7 +60,7 @@ public class waterWaveEffectCustom : MonoBehaviour
         waveRender.material.SetTextureOffset("_MainTex", new Vector2(wave_Offset.x, wave_Offset.y)); 
         waveRender.material.SetTextureScale("_MainTex",new Vector2(wave_Tiling.x,wave_Tiling.y));
 
-        //whater level
+        //water level
 
        transform.localScale=new Vector3(transform.localScale.x,initial_water_scale+whaterLevel,0);
         transform.position=new Vector3(transform.position.x,initial_water_bottom_pos+whaterLevel,0);

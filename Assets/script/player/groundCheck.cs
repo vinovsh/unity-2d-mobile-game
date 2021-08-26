@@ -26,7 +26,7 @@ public class groundCheck : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
          
-      if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform"){
+      if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform" || col.gameObject.tag=="box"){
 
         player.GetComponent<playerController>().isGround=true;
       
@@ -60,7 +60,7 @@ public class groundCheck : MonoBehaviour
           Rigidbody2D rb=player.GetComponent<Rigidbody2D>();
 
              // rb.AddForce(Vector2.up*20,ForceMode2D.Impulse);
-             rb.velocity=Vector2.up*10;
+             rb.velocity=Vector2.up*7;
          }
      }
         
@@ -70,7 +70,7 @@ public class groundCheck : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
-      if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform"){
+      if(col.gameObject.tag=="ground" || col.gameObject.tag=="platform" || col.gameObject.tag=="box"){
 
         player.GetComponent<playerController>().isGround=false;
        // player.transform.parent = null;
@@ -83,7 +83,7 @@ public class groundCheck : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D trigger)
      {
-         if (trigger.gameObject.tag == "ground" || trigger.gameObject.tag=="platform")
+         if (trigger.gameObject.tag == "ground" || trigger.gameObject.tag=="platform" || trigger.gameObject.tag=="box")
          {
 
             player.GetComponent<playerController>().isGround=true;

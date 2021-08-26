@@ -25,6 +25,8 @@ public class playerController : MonoBehaviour
 
     public bool canGravity=true;
     public bool isWater=false;
+
+    public bool isMoving=false;
     
     
     void Awake()
@@ -55,7 +57,8 @@ public class playerController : MonoBehaviour
         {
 
           
-            canGravity=false;
+           canGravity=false;
+           isMoving=true;
            transform.eulerAngles=new Vector2(0,0);
        
           transform.position+=new Vector3(1,0,0)*Time.fixedDeltaTime*speed;
@@ -82,6 +85,7 @@ public class playerController : MonoBehaviour
         }else if(Input.GetKey(KeyCode.LeftArrow) || canLeftMove){
             
           canGravity=false;
+          isMoving=true;
           transform.eulerAngles=new Vector3(0,180,0);
          
           transform.position+=new Vector3(-1,0,0)*Time.fixedDeltaTime*speed;
@@ -106,6 +110,7 @@ public class playerController : MonoBehaviour
         }else{
 
             canGravity=true;
+            isMoving=false;
 
              anim.SetInteger("walk", 0);
              anim.SetInteger("jump", 0);
@@ -185,6 +190,28 @@ public class playerController : MonoBehaviour
        canJump=false;
 
   }
+
+
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+      string tag=other.gameObject.tag;
+      if(tag=="box"){
+
+          if(isMoving==true){
+              
+              other.gameObject.GetComponent<Rigidbody2D>().velocity=Vector2.right*3;
+             
+          
+
+          }
+
+         
+
+          
+      }
+  }
+
+  
 
 
 

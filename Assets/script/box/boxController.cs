@@ -44,4 +44,25 @@ public class boxController : MonoBehaviour
         }
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        string tag=other.gameObject.tag;
+        if(tag=="Player"){
+
+             gameObject.GetComponent<Rigidbody2D>().gravityScale=0.1f;
+              print("player");
+        }
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        string tag=other.gameObject.tag;
+        if(tag=="Player"){
+
+             gameObject.GetComponent<Rigidbody2D>().gravityScale=1f;
+        }
+        
+    }
 }

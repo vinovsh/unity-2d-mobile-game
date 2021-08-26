@@ -16,6 +16,7 @@ TagManager:
   - Explosion
   - platform
   - water
+  - box
   layers:
   - Default
   - TransparentFX
