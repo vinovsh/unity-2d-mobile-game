@@ -39,6 +39,8 @@ public class spiderEnemyController : MonoBehaviour
     public bool isGround=true;
 
     public GameObject ground_check_object;
+
+    float turn_time=0;
     void Start()
     {
 
@@ -87,19 +89,25 @@ public class spiderEnemyController : MonoBehaviour
 
 
               GameObject obj=hit_right.collider.gameObject;
-	          if(obj.CompareTag("ground")){
+	          if(obj.tag=="ground" || obj.tag=="box"){
+
+               
 
                   
                   canWalk=true;
                   attack=false;
-                  if(hit_right.distance < 0.3){
+
+                  
+                  if(hit_right.distance < 0.3 && Time.time > turn_time){
 
                      if(move_direction==1){
 
                         move_direction=-1;
+                        turn_time=Time.time+0.5f;
                      }else{
 
                         move_direction=1;
+                        turn_time=Time.time+0.5f;
                      }
 
                      
