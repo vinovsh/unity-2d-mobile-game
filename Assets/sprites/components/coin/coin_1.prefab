@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2016469739
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -675104096977794455, guid: c4695f9ce87b369478ea561cc60a9c69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -128,7 +128,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 796805158422296088}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 82abef0103a90ec43be0b415d00753ec, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0

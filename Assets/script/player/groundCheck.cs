@@ -79,6 +79,8 @@ public class groundCheck : MonoBehaviour
       rb.gravityScale=2f;
 
       }
+
+     
     }
 
     void OnCollisionStay2D(Collision2D trigger)
@@ -108,6 +110,8 @@ public class groundCheck : MonoBehaviour
            
          }
      }
+
+     
 
      
 
