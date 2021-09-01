@@ -18,6 +18,8 @@ public class enemyHealthController : MonoBehaviour
 
            
     public bool isEnemyAlive= true;
+
+    public string enemy_name;
    
     void Start()
     {
@@ -44,12 +46,19 @@ public class enemyHealthController : MonoBehaviour
 
          }else{
 
-           
-            isEnemyAlive=false;
-            dieSound.Play();
-            anim.SetInteger("dead", 1);
 
-            Destroy(gameObject,1f);
+            if(enemy_name=="spider"){
+                
+                isEnemyAlive=false;
+                dieSound.Play();
+                anim.SetInteger("dead", 1);
+
+                Destroy(gameObject,1f);
+
+            }
+
+           
+            
          }
 
         
