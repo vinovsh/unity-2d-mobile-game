@@ -55,6 +55,10 @@ public class enemyHealthController : MonoBehaviour
 
                 Destroy(gameObject,1f);
 
+            }else if(enemy_name=="worm"){
+
+               isEnemyAlive=false;
+                Destroy(gameObject,1f);
             }
 
            

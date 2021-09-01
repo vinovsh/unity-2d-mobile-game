@@ -115,12 +115,15 @@ public class wormEnemyController : MonoBehaviour
                   }
               }
 
+              
+
               if(obj.CompareTag("Player")){
+               
               
                 if(hit_right.distance < 0.2f){
-
-                    attack=true;
-                    canWalk=false;
+                  
+                    attack=false; //after changed
+                    canWalk=true; //after changed
                 }else{
 
                     attack=false;
@@ -195,13 +198,13 @@ public class wormEnemyController : MonoBehaviour
 
                transform.eulerAngles=new Vector3(0,0,0);
        
-               transform.position+=new Vector3(1,0,0)*Time.deltaTime*speed;
+               transform.position+=new Vector3(-1,0,0)*Time.deltaTime*speed;
                 
             }else{
 
                transform.eulerAngles=new Vector3(0,180,0);
          
-               transform.position+=new Vector3(-1,0,0)*Time.deltaTime*speed;
+               transform.position+=new Vector3(1,0,0)*Time.deltaTime*speed;
            }
 
         }
@@ -234,7 +237,7 @@ public class wormEnemyController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
 
-   //  print(other.gameObject.tag);
+  
 
        
      
@@ -242,6 +245,8 @@ public class wormEnemyController : MonoBehaviour
            if(other.collider.gameObject.tag=="top" || other.collider.gameObject.tag=="toe"){
 
            }else if(other.gameObject.tag=="Player"){
+
+             
 
               if (Time.time > attackRate + lastAttack && isEnemyAlive)
               {
