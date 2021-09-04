@@ -31,6 +31,8 @@ public class spiderEnemyController : MonoBehaviour
     GameObject player;
     public Animator anim;
 
+    AudioSource dieSound;
+
     private float lastAttack = 0.0f;
     public float attackRate;
 
@@ -41,12 +43,15 @@ public class spiderEnemyController : MonoBehaviour
     public GameObject ground_check_object;
 
     float turn_time=0;
+
+    public bool isActiveDeadSection=false;
     void Start()
     {
 
         rb=GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
         anim = anim.GetComponent<Animator>();
+        dieSound=GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -165,27 +170,7 @@ public class spiderEnemyController : MonoBehaviour
                }
            }
 
-            /* if(hit_left.collider!=null){
-
-
-
-               GameObject obj=hit_left.collider.gameObject;
-	            if(obj.CompareTag("Player")){
-
-                  if(move_direction==1){
-
-                     move_direction=-1;
-                  }else{
-
-                     move_direction=1;
-                  }
-
-               }
-
-            
-           } */
-
-
+           
 
            //movement section
         if(canWalk){
@@ -233,8 +218,21 @@ public class spiderEnemyController : MonoBehaviour
         }
 	      
         }
+
+
+        //dead section
+
+        if(isActiveDeadSection==true){
+
+           isActiveDeadSection=false;
+
+            dieSound.Play();
+            anim.SetInteger("dead", 1);
+
+            Destroy(gameObject,1f);
+        }
           
-    //}
+ 
 
     }
 

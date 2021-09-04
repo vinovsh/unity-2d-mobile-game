@@ -10,23 +10,25 @@ public class enemyHealthController : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    public Animator anim;
+  
 
     GameObject player;
 
-    AudioSource dieSound;
+    
 
            
     public bool isEnemyAlive= true;
 
     public string enemy_name;
+
+  
    
     void Start()
     {
 
-       anim = anim.GetComponent<Animator>();
+     
        player = GameObject.FindWithTag("Player");
-       dieSound=GetComponent<AudioSource>();
+      
         
     }
 
@@ -50,15 +52,16 @@ public class enemyHealthController : MonoBehaviour
             if(enemy_name=="spider"){
                 
                 isEnemyAlive=false;
-                dieSound.Play();
-                anim.SetInteger("dead", 1);
-
-                Destroy(gameObject,1f);
+                GetComponent<spiderEnemyController>().isActiveDeadSection=true;
+               
 
             }else if(enemy_name=="worm"){
 
                isEnemyAlive=false;
-                Destroy(gameObject,1f);
+               GetComponent<wormEnemyController>().isActiveDeadSection=true;
+              /*  deadEffet.Play();
+               Destroy(GetComponent<PolygonCollider2D>());
+               Destroy(gameObject,1f); */
             }
 
            

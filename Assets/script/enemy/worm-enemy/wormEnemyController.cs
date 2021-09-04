@@ -16,6 +16,12 @@ public class wormEnemyController : MonoBehaviour
     public float raycast_distance_right;
     public float raycast_distance_bottom;
     public float raycast_distance_left;
+    AudioSource dieSound;
+
+    public GameObject deadSmoke;
+    public ParticleSystem deadSpark;
+
+    
 
     public int move_direction=-1;
 
@@ -40,12 +46,19 @@ public class wormEnemyController : MonoBehaviour
 
     public GameObject ground_check_object;
 
+ 
+
+   public GameObject sprite;
+
+   public bool isActiveDeadSection=false;
+
     float turn_time=0;
     void Start()
     {
 
         rb=GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
+        dieSound=GetComponent<AudioSource>();
        
     }
 
@@ -168,25 +181,7 @@ public class wormEnemyController : MonoBehaviour
                }
            }
 
-            /* if(hit_left.collider!=null){
-
-
-
-               GameObject obj=hit_left.collider.gameObject;
-	            if(obj.CompareTag("Player")){
-
-                  if(move_direction==1){
-
-                     move_direction=-1;
-                  }else{
-
-                     move_direction=1;
-                  }
-
-               }
-
-            
-           } */
+          
 
 
 
@@ -229,8 +224,26 @@ public class wormEnemyController : MonoBehaviour
         }
 	      
         }
-          
-    //}
+
+
+          //dead section
+
+        if(isActiveDeadSection==true){
+
+           isActiveDeadSection=false;
+
+       
+
+         
+               Destroy(GetComponent<PolygonCollider2D>());
+               Destroy(ground_check_object.GetComponent<PolygonCollider2D>());
+               Destroy(sprite);
+               deadSpark.Play();
+               deadSmoke.SetActive(true);
+               rb.gravityScale=0f;
+               Destroy(gameObject,5f);
+        }  
+   
 
     }
 
