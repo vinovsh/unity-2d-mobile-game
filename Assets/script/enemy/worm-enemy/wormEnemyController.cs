@@ -238,6 +238,7 @@ public class wormEnemyController : MonoBehaviour
                Destroy(GetComponent<PolygonCollider2D>());
                Destroy(ground_check_object.GetComponent<PolygonCollider2D>());
                Destroy(sprite);
+               dieSound.Play();
                deadSpark.Play();
                deadSmoke.SetActive(true);
                rb.gravityScale=0f;
