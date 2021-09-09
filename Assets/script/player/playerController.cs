@@ -76,7 +76,7 @@ public class playerController : MonoBehaviour
             if (!runSound.isPlaying && isGround==true && isWater==false)
             {
 
-             runSound.Play();
+           //  runSound.Play();
 
             }
 
@@ -100,7 +100,7 @@ public class playerController : MonoBehaviour
           if (!runSound.isPlaying  && isGround==true && isWater==false)
           {
 
-             runSound.Play();
+             //runSound.Play();
 
           }
 
