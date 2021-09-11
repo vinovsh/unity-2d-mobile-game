@@ -16,16 +16,16 @@ public class RotatingObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if(moveDirection==1){
 
-            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.fixedDeltaTime*-1*10);
+            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.fixedDeltaTime*-1*50);
 
         }else{
 
-            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.deltaTime*1*10);
+            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.fixedDeltaTime*1*50);
         }
 
             
