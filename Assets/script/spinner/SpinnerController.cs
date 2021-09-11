@@ -18,10 +18,12 @@ public class SpinnerController : MonoBehaviour
 
     private Vector3 nextPos;
 
+    
+
     void Start()
     {
 
-       
+       GetComponent<AudioSource>().Play();   
 
         if(moveDirection=="top"){
 

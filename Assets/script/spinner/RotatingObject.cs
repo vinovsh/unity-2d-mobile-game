@@ -21,11 +21,11 @@ public class RotatingObject : MonoBehaviour
 
         if(moveDirection==1){
 
-            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.fixedDeltaTime*-1*5);
+            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.fixedDeltaTime*-1*10);
 
         }else{
 
-            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.deltaTime*1*5);
+            roatatingObject.transform.Rotate(0,0, spiner_speed * Time.deltaTime*1*10);
         }
 
             
