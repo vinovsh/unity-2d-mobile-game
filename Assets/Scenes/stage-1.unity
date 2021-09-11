@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69685c4a2bcf2747ba7c133c510dad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 15
+  force: 25
 --- !u!70 &507840428
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2987,7 +2987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5786a281ea7a1c43a2615743fd7bf59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothFactor: 5
+  smoothFactor: 2
   offset: {x: 1.15, y: 1.51, z: -10}
   offset2: 1.46
 --- !u!1 &538323885
@@ -16838,7 +16838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380550753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.59, y: -1.13, z: 0}
+  m_LocalPosition: {x: 51.59, y: -1.39, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: -12.039999}
   m_Children:
   - {fileID: 1782997640}
@@ -17751,7 +17751,7 @@ GameObject:
   - component: {fileID: 1516807308}
   m_Layer: 0
   m_Name: jump-plate
-  m_TagString: Untagged
+  m_TagString: box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

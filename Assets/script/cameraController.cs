@@ -23,13 +23,33 @@ public class cameraController : MonoBehaviour
     void FixedUpdate()
     {
 
-    Vector3 targetPosition=player.transform.position+offset;
+       Vector3 targetPosition=player.transform.position+offset;
 
-      Vector3 smoothPosition=Vector3.Lerp(transform.position,targetPosition,smoothFactor*Time.fixedDeltaTime);
-      smoothPosition.z=transform.position.z;
+       Vector3 smoothPosition=Vector3.Lerp(transform.position,targetPosition,smoothFactor*Time.fixedDeltaTime);
+       smoothPosition.z=transform.position.z;
 
- //transform.position=new Vector3(player.transform.position.x,player.transform.position.y+offset2,transform.position.z);
-  transform.position=smoothPosition;
+
+       if(player.transform.position.y >=4f){
+
+           transform.position=smoothPosition;
+       }else if(player.transform.position.y <=-4f){
+
+           transform.position=smoothPosition;
+       }else if(player.GetComponent<playerController>().isGround==false){
+
+          transform.position=new Vector3(smoothPosition.x,transform.position.y,transform.position.z);
+        }
+      
+
+       if(player.GetComponent<playerController>().isGround==true){
+
+         
+
+          //transform.position=new Vector3(player.transform.position.x,player.transform.position.y+offset2,transform.position.z);
+          transform.position=smoothPosition;
+          
+
+        }
      
         
     }

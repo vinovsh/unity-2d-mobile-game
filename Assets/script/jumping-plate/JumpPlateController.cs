@@ -22,17 +22,30 @@ public class JumpPlateController : MonoBehaviour
     // Update is called once per frame
    private void OnCollisionEnter2D(Collision2D other)
    {
+
+       string tag=other.gameObject.tag;
+
+       if(tag=="Player" || tag=="box"){
+
+           rb=other.gameObject.GetComponent<Rigidbody2D>();
+           rb.velocity=Vector2.up*force;
+           anim.SetInteger("bounce", 1);
+           audios.Play();  
+
+       }
       
-       rb=other.gameObject.GetComponent<Rigidbody2D>();
-       rb.velocity=Vector2.up*force;
-       anim.SetInteger("bounce", 1);
-       audios.Play();
+      
       
    }
 
    private void OnCollisionExit2D(Collision2D other)
    {
-        anim.SetInteger("bounce", 0);
+
+       string tag=other.gameObject.tag;
+
+        if(tag=="Player" || tag=="box"){
+          anim.SetInteger("bounce", 0);
+        }
        
    }
 }
