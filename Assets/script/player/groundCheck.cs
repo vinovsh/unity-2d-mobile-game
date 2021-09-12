@@ -60,7 +60,7 @@ public class groundCheck : MonoBehaviour
           Rigidbody2D rb=player.GetComponent<Rigidbody2D>();
 
              // rb.AddForce(Vector2.up*20,ForceMode2D.Impulse);
-             rb.velocity=Vector2.up*7;
+             rb.velocity=Vector2.up*10;
          }
      }
         
