@@ -2990,6 +2990,10 @@ MonoBehaviour:
   smoothFactor: 2
   offset: {x: 1.15, y: 1.51, z: -10}
   offset2: 1.46
+  isPlayerTop: 0
+  isPlayerbottom: 0
+  restricted_player_top_area: 3.1
+  restricted_player_bottom_area: -3.1
 --- !u!1 &538323885
 GameObject:
   m_ObjectHideFlags: 0
@@ -16838,7 +16842,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380550753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 51.59, y: -1.39, z: 0}
+  m_LocalPosition: {x: 51.59, y: -1.35, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: -12.039999}
   m_Children:
   - {fileID: 1782997640}

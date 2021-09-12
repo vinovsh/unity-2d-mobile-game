@@ -11,6 +11,13 @@ public class cameraController : MonoBehaviour
     public float smoothFactor;
     public Vector3 offset;
     public float offset2;
+
+    public bool isPlayerTop=false;
+
+    public bool isPlayerbottom=false;
+
+    public float restricted_player_top_area;
+    public float restricted_player_bottom_area;
     void Start()
     {
       
@@ -29,19 +36,32 @@ public class cameraController : MonoBehaviour
        smoothPosition.z=transform.position.z;
 
 
-       if(player.transform.position.y >=4f){
+      if(player.transform.position.y >=transform.position.y+restricted_player_top_area){
+
+          isPlayerTop=true;
+      }if(player.transform.position.y <=transform.position.y+restricted_player_bottom_area){
+        
+          isPlayerbottom=true;
+      }else if(player.GetComponent<playerController>().isGround==true){
+
+         isPlayerTop=false; 
+         isPlayerbottom=false;
+      }
+
+
+
+      /*  if(player.transform.position.y >=4f){
 
            transform.position=smoothPosition;
        }else if(player.transform.position.y <=-4f){
 
            transform.position=smoothPosition;
-       }else if(player.GetComponent<playerController>().isGround==false){
-
-          transform.position=new Vector3(smoothPosition.x,transform.position.y,transform.position.z);
-        }
+       } */
       
+      if(isPlayerTop==false && isPlayerbottom==false){
+           
 
-       if(player.GetComponent<playerController>().isGround==true){
+        if(player.GetComponent<playerController>().isGround==true){
 
          
 
@@ -49,7 +69,19 @@ public class cameraController : MonoBehaviour
           transform.position=smoothPosition;
           
 
+        }else if(player.GetComponent<playerController>().isGround==false){
+
+           transform.position=new Vector3(smoothPosition.x,transform.position.y,transform.position.z);
         }
+
+      }else if(isPlayerTop==true){
+
+          transform.position=new Vector3(smoothPosition.x,player.transform.position.y-restricted_player_top_area,transform.position.z);
+      }else if(isPlayerbottom==true){
+
+          transform.position=smoothPosition;
+      }
+       
      
         
     }
