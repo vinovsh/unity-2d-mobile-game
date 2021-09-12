@@ -246,7 +246,7 @@ public class spiderEnemyController : MonoBehaviour
 
            if(other.collider.gameObject.tag=="top" || other.collider.gameObject.tag=="toe"){
 
-           }else if(other.gameObject.tag=="Player1"){
+           }else if(other.gameObject.tag=="Player"){
 
               if (Time.time > attackRate + lastAttack && isEnemyAlive)
               {
