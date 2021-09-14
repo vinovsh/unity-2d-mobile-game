@@ -3360,7 +3360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.5, y: 0.28, z: -10.000024}
+  m_LocalPosition: {x: 1.87, y: -0.77, z: -10.000024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17907,7 +17907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380550753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.38, y: -1.31, z: 0}
+  m_LocalPosition: {x: 0.72, y: -2.42, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: -12.039999}
   m_Children:
   - {fileID: 1782997640}
@@ -17997,6 +17997,10 @@ MonoBehaviour:
   canGravity: 1
   isWater: 0
   isMoving: 0
+  raycast_distance_bottom: 26.76
+  bottom_offset: {x: 0, y: -0.76, z: 0}
+  move_direction: -1
+  hit_bottom_distance: 0
 --- !u!114 &1380550758
 MonoBehaviour:
   m_ObjectHideFlags: 0

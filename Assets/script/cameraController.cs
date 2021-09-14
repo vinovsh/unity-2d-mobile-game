@@ -75,8 +75,15 @@ public class cameraController : MonoBehaviour
         }
 
       }else if(isPlayerTop==true){
+          if(player.GetComponent<playerController>().hit_bottom_distance < 4.7f){
+             
+             transform.position=new Vector3(smoothPosition.x,transform.position.y,transform.position.z);
 
-          transform.position=new Vector3(smoothPosition.x,player.transform.position.y-restricted_player_top_area,transform.position.z);
+          }else{
+
+             transform.position=new Vector3(smoothPosition.x,player.transform.position.y-restricted_player_top_area,transform.position.z);
+          }
+          
       }else if(isPlayerbottom==true){
 
           transform.position=smoothPosition;

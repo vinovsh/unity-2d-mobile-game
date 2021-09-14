@@ -28,7 +28,12 @@ public class playerController : MonoBehaviour
 
     public bool isMoving=false;
     
-    
+    public float raycast_distance_bottom;
+    public Vector3 bottom_offset;
+    public int move_direction=-1;
+
+
+    public float  hit_bottom_distance;
     void Awake()
     {
 
@@ -49,6 +54,20 @@ public class playerController : MonoBehaviour
 
        
  //rb.velocity = rb.velocity * friction; // custom friction 
+
+       Vector3 bottomOffsetCorrection=new Vector3(bottom_offset.x*move_direction,bottom_offset.y,bottom_offset.z);
+       //player ground distance check
+        RaycastHit2D hit_bottom = Physics2D.Raycast(transform.position+bottomOffsetCorrection, Vector2.down,raycast_distance_bottom);
+        Debug.DrawRay(transform.position+bottomOffsetCorrection,Vector2.down*raycast_distance_bottom,Color.red);
+
+         if(hit_bottom.collider!=null){
+
+
+             hit_bottom_distance=hit_bottom.distance;
+            
+            
+           }
+
 
       
 
